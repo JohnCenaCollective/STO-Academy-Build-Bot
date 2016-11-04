@@ -206,7 +206,7 @@ namespace Emzi0767.Gaming.Sto.AcademyConverterBot.Reddit
 
         public void WriteLast()
         {
-            var l = Program.Location;
+            var l = AcademyLib.Location;
             l = Path.Combine(l, "v2_settings");
             var utf8 = new UTF8Encoding(false);
 
@@ -230,7 +230,7 @@ namespace Emzi0767.Gaming.Sto.AcademyConverterBot.Reddit
 
         private void LoadSettings()
         {
-            var l = Program.Location;
+            var l = AcademyLib.Location;
             l = Path.Combine(l, "v2_settings");
             var utf8 = new UTF8Encoding(false);
 
@@ -271,7 +271,7 @@ namespace Emzi0767.Gaming.Sto.AcademyConverterBot.Reddit
             var json = this.RequestBuilder.GetResponseJson(res);
 
             // read current token
-            var l = Program.Location;
+            var l = AcademyLib.Location;
             l = Path.Combine(l, "v2_settings");
             var utf8 = new UTF8Encoding(false);
 

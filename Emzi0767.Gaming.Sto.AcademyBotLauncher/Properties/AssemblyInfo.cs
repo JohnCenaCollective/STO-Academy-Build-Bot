@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Academy Converter Bot")]
-[assembly: AssemblyDescription("Reddit bot which automatically converts STO Academy links posted to /r/stobuilds into local templates")]
+[assembly: AssemblyTitle("STO Academy Bot Launcher")]
+[assembly: AssemblyDescription("A small wrapper to launch STO Academy converter bot.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Emzi0767")]
-[assembly: AssemblyProduct("Emzi0767.Gaming.Sto.AcademyConverterBot")]
+[assembly: AssemblyProduct("Emzi0767.Gaming.Sto.AcademyBotLauncher")]
 [assembly: AssemblyCopyright("Copyright © Emzi0767 2016")]
 [assembly: AssemblyTrademark("Emzi0767 2016")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("482d8622-73af-4845-8eaa-fc4e58c237ed")]
+[assembly: Guid("7b74fb5a-ef6b-4758-9909-046308b64f68")]
 
 // Version information for an assembly consists of the following four values:
 //
@@ -32,5 +32,5 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.1.0.0")]
-[assembly: AssemblyFileVersion("1.1.0.0")]
+[assembly: AssemblyVersion("1.0.0.0")]
+[assembly: AssemblyFileVersion("1.0.0.0")]

@@ -11,41 +11,20 @@ using Emzi0767.Tools.MicroLogger;
 
 namespace Emzi0767.Gaming.Sto.AcademyConverterBot
 {
-    internal static class Program
+    public static class AcademyLib
     {
-        internal static string Location { get; private set; }
-        private static Dictionary<string, Assembly> Assemblies { get; set; }
+        public static string Location { get; private set; }
+        public static Version LibAcademyVersion { get; private set; }
+        public static Version LibBotVersion { get; private set; }
 
-        internal static void Main(string[] args)
+        public static void RunBot(string[] args)
         {
-            var a = Assembly.GetExecutingAssembly();
-            var l = a.Location;
-            Location = Path.GetDirectoryName(l);
-            Assemblies = new Dictionary<string, Assembly>();
-            
-            AppDomain.CurrentDomain.AssemblyResolve += CurrentDomain_AssemblyResolve;
-
-            l = Path.Combine(Location, "v2_lib");
-            if (Directory.Exists(l))
-            {
-                var ls = Directory.GetFiles(l, "*.dll", SearchOption.TopDirectoryOnly);
-                foreach (var xl in ls)
-                {
-                    try
-                    {
-                        var xa = Assembly.Load(File.ReadAllBytes(xl));
-                        Assemblies.Add(xa.FullName, xa);
-                    }
-                    catch (Exception ex) { Console.WriteLine("CRITICAL: Could not load {0}: {2}/{1}", xl, ex.Message, ex.GetType().ToString()); }
-                }
-            }
-            else
-                Console.WriteLine("CRITICAL: v2_lib does not exist");
-
             L.D(Debugger.IsAttached);
             L.R(Console.Out);
             L.W("ACB v2", "Initializing");
             L.W("ACB v2", "Running from \"{0}\"", Location);
+            L.W("ACB v2", "Bot Version: {0}", LibBotVersion);
+            L.W("ACB v2", "LibStoa Version: {0}", LibAcademyVersion);
 
             L.W("ACB v2", "Parsing commandline");
             var cmdl = ParseCommandline(args);
@@ -210,13 +189,6 @@ namespace Emzi0767.Gaming.Sto.AcademyConverterBot
 
             L.W("ACB v2", "All operations completed");
             L.Q();
-        }
-
-        private static Assembly CurrentDomain_AssemblyResolve(object sender, ResolveEventArgs args)
-        {
-            if (Assemblies.ContainsKey(args.Name))
-                return Assemblies[args.Name];
-            return null;
         }
 
         private static CommandLine ParseCommandline(string[] args)
