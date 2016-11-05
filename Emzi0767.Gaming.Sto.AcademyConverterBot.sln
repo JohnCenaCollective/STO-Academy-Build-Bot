@@ -14,6 +14,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ext_lib", "ext_lib", "{6FA3
 		..\..\..\..\Source\Repos\Html2Markdown\src\Html2Markdown\bin\Release\Html2Markdown.dll = ..\..\..\..\Source\Repos\Html2Markdown\src\Html2Markdown\bin\Release\Html2Markdown.dll
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "sample_configs", "sample_configs", "{C015ABEB-9DAF-4848-BA2C-E7394987B0E7}"
+	ProjectSection(SolutionItems) = preProject
+		sample_configs\config.json = sample_configs\config.json
+		sample_configs\oauth.json = sample_configs\oauth.json
+		sample_configs\settings.json = sample_configs\settings.json
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
