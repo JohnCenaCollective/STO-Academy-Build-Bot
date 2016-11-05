@@ -538,7 +538,7 @@ namespace Emzi0767.Gaming.Sto.AcademyConverterBot.Utilities
             }
 
             this.MDW.WriteParagraph(string.Format("*I am a robit. Above was translated automatically using [Automatic Build Converter](https://www.reddit.com/r/stobuilds/comments/5466ul/automatic_sto_academy_build_converter/) Bot. Got questions? Found a problem? You can [send my creator a message](https://www.reddit.com/message/compose/?to=eMZi0767&subject=STO+Academy+Proxy+Bot).*", build.ID, this.GetAbtVersion()));
-            this.MDW.WriteParagraph(string.Format("*Academy Bot Version: {0} | LibStoa Version: {1}*", AcademyLib.LibAcademyVersion, AcademyLib.LibBotVersion));
+            this.MDW.WriteParagraph(string.Format("*Academy Bot Version: {1} | LibStoa Version: {0}*", AcademyLib.LibAcademyVersion, AcademyLib.LibBotVersion));
         }
 
         private IEnumerable<StoAcademySkill> ReduceSkills(IEnumerable<StoAcademySkill> skill_tree)

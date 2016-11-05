@@ -19,8 +19,13 @@ namespace Emzi0767.Gaming.Sto.AcademyConverterBot
 
         public static void RunBot(string[] args)
         {
+            // this is for discord logger
+            var dsb = new StringBuilder();
+            var dsw = new StringWriter(dsb);
+
             L.D(Debugger.IsAttached);
             L.R(Console.Out);
+            L.R(dsw);
             L.W("ACB v2", "Initializing");
             L.W("ACB v2", "Running from \"{0}\"", Location);
             L.W("ACB v2", "Bot Version: {0}", LibBotVersion);
@@ -189,6 +194,8 @@ namespace Emzi0767.Gaming.Sto.AcademyConverterBot
 
             L.W("ACB v2", "All operations completed");
             L.Q();
+
+            // write the discord log
         }
 
         private static CommandLine ParseCommandline(string[] args)
