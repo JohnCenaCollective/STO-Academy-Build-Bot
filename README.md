@@ -55,7 +55,7 @@ Next up, you need to edit configs. First config to edit is `oauth.json`, which c
 
 Next, `settings.json`. Edit `app_id` to match ID of the aplication you set up on reddit.
 
-Last, `config.json`. It contains a variety of configuration options, although for now this is just Discord logging settings. It is pretty straightforward. `use_discord` defines whether to output data to discord, `discord_ip` and `discord_port` define where is the Discord logger running.
+Last, `config.json`. It contains a variety of configuration options, although for now this is just Discord logging settings. It is pretty straightforward. `use_discord` defines whether to output data to discord, `discord_ip` and `discord_port` define where is the [Discord Logger](https://github.com/Emzi0767/Discord-Logger) running.
 
 ###SETTING UP A SCRIPT TO RUN THE BOT
 
