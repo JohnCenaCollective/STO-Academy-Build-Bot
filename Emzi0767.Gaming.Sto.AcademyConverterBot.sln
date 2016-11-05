@@ -9,9 +9,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Emzi0767.Gaming.Sto.Academy
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ext_lib", "ext_lib", "{6FA3953C-81B8-40CA-8880-9DD03890F8A9}"
 	ProjectSection(SolutionItems) = preProject
-		..\Emzi0767.Gaming.Sto.StoaProxy\Emzi0767.Gaming.Sto.StoaLib\bin\Release\Emzi0767.Gaming.Sto.StoaLib.dll = ..\Emzi0767.Gaming.Sto.StoaProxy\Emzi0767.Gaming.Sto.StoaLib\bin\Release\Emzi0767.Gaming.Sto.StoaLib.dll
-		..\Emzi0767.Tools.MicroLogger\Emzi0767.Tools.MicroLogger\bin\Release\Emzi0767.Tools.MicroLogger.dll = ..\Emzi0767.Tools.MicroLogger\Emzi0767.Tools.MicroLogger\bin\Release\Emzi0767.Tools.MicroLogger.dll
-		..\..\..\..\Source\Repos\Html2Markdown\src\Html2Markdown\bin\Release\Html2Markdown.dll = ..\..\..\..\Source\Repos\Html2Markdown\src\Html2Markdown\bin\Release\Html2Markdown.dll
+		ext_lib\Emzi0767.Gaming.Sto.StoaLib.dll = ext_lib\Emzi0767.Gaming.Sto.StoaLib.dll
+		ext_lib\Emzi0767.Tools.MicroLogger.dll = ext_lib\Emzi0767.Tools.MicroLogger.dll
+		ext_lib\Html2Markdown.dll = ext_lib\Html2Markdown.dll
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "sample_configs", "sample_configs", "{C015ABEB-9DAF-4848-BA2C-E7394987B0E7}"
