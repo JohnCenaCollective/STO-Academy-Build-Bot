@@ -1,11 +1,18 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Emzi0767.Gaming.Sto.AcademyConverterBot", "Emzi0767.Gaming.Sto.AcademyConverterBot\Emzi0767.Gaming.Sto.AcademyConverterBot.csproj", "{482D8622-73AF-4845-8EAA-FC4E58C237ED}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Emzi0767.Gaming.Sto.AcademyBotLauncher", "Emzi0767.Gaming.Sto.AcademyBotLauncher\Emzi0767.Gaming.Sto.AcademyBotLauncher.csproj", "{7B74FB5A-EF6B-4758-9909-046308B64F68}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ext_lib", "ext_lib", "{6FA3953C-81B8-40CA-8880-9DD03890F8A9}"
+	ProjectSection(SolutionItems) = preProject
+		..\Emzi0767.Gaming.Sto.StoaProxy\Emzi0767.Gaming.Sto.StoaLib\bin\Release\Emzi0767.Gaming.Sto.StoaLib.dll = ..\Emzi0767.Gaming.Sto.StoaProxy\Emzi0767.Gaming.Sto.StoaLib\bin\Release\Emzi0767.Gaming.Sto.StoaLib.dll
+		..\Emzi0767.Tools.MicroLogger\Emzi0767.Tools.MicroLogger\bin\Release\Emzi0767.Tools.MicroLogger.dll = ..\Emzi0767.Tools.MicroLogger\Emzi0767.Tools.MicroLogger\bin\Release\Emzi0767.Tools.MicroLogger.dll
+		..\..\..\..\Source\Repos\Html2Markdown\src\Html2Markdown\bin\Release\Html2Markdown.dll = ..\..\..\..\Source\Repos\Html2Markdown\src\Html2Markdown\bin\Release\Html2Markdown.dll
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

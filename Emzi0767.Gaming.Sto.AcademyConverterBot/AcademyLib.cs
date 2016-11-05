@@ -2,12 +2,15 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
+using System.Net;
+using System.Net.Sockets;
 using System.Reflection;
 using System.Text;
 using Emzi0767.Gaming.Sto.AcademyConverterBot.Reddit;
 using Emzi0767.Gaming.Sto.AcademyConverterBot.Utilities;
 using Emzi0767.Gaming.Sto.StoaLib;
 using Emzi0767.Tools.MicroLogger;
+using Newtonsoft.Json.Linq;
 
 namespace Emzi0767.Gaming.Sto.AcademyConverterBot
 {
@@ -17,15 +20,26 @@ namespace Emzi0767.Gaming.Sto.AcademyConverterBot
         public static Version LibAcademyVersion { get; private set; }
         public static Version LibBotVersion { get; private set; }
 
+        private static bool UseDiscordLog { get; set; }
+        private static IPEndPoint DiscordLogEndpoint { get; set; }
+        private static StringBuilder DiscordLog { get; set; }
+
         public static void RunBot(string[] args)
         {
-            // this is for discord logger
-            var dsb = new StringBuilder();
-            var dsw = new StringWriter(dsb);
+            LoadConf();
 
             L.D(Debugger.IsAttached);
             L.R(Console.Out);
-            L.R(dsw);
+
+            // this is for discord logger
+            if (UseDiscordLog)
+            {
+                var dsb = new StringBuilder();
+                var dsw = new StringWriter(dsb);
+                L.R(dsw);
+                DiscordLog = dsb;
+            }
+
             L.W("ACB v2", "Initializing");
             L.W("ACB v2", "Running from \"{0}\"", Location);
             L.W("ACB v2", "Bot Version: {0}", LibBotVersion);
@@ -196,6 +210,32 @@ namespace Emzi0767.Gaming.Sto.AcademyConverterBot
             L.Q();
 
             // write the discord log
+            if (UseDiscordLog)
+            {
+                var sender = new Socket(DiscordLogEndpoint.AddressFamily, SocketType.Stream, ProtocolType.Tcp);
+                sender.Connect(DiscordLogEndpoint);
+                var msgd = new UTF8Encoding(false).GetBytes(DiscordLog.ToString());
+                var msgl = BitConverter.GetBytes((ulong)msgd.Length);
+                var msg = new byte[msgd.Length + msgl.Length];
+                Array.Copy(msgl, 0, msg, 0, msgl.Length);
+                Array.Copy(msgd, 0, msg, msgl.Length, msgd.Length);
+                sender.Send(msg);
+                sender.Close();
+            }
+        }
+
+        private static void LoadConf()
+        {
+            var l = Location;
+            l = Path.Combine(l, "v2_settings");
+            var utf8 = new UTF8Encoding(false);
+
+            // settings
+            var sp = Path.Combine(l, "config.json");
+            var sjson = File.ReadAllText(sp, utf8);
+            var sjo = JObject.Parse(sjson);
+            UseDiscordLog = (bool)sjo["use_discord"];
+            DiscordLogEndpoint = new IPEndPoint(IPAddress.Parse((string)sjo["discord_ip"]), (int)sjo["discord_port"]);
         }
 
         private static CommandLine ParseCommandline(string[] args)

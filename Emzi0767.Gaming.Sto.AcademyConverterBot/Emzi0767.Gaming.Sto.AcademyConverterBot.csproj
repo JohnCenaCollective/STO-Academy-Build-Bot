@@ -39,13 +39,13 @@
   <ItemGroup>
     <Reference Include="Emzi0767.Gaming.Sto.StoaLib, Version=1.2.5.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\eMZi0767.Gaming.STO.STOAProxy\eMZi0767.Gaming.STO.STOALib\bin\Release\Emzi0767.Gaming.Sto.StoaLib.dll</HintPath>
+      <HintPath>..\ext_lib\Emzi0767.Gaming.Sto.StoaLib.dll</HintPath>
     </Reference>
     <Reference Include="Emzi0767.Tools.MicroLogger">
-      <HintPath>..\..\Emzi0767.Tools.MicroLogger\Emzi0767.Tools.MicroLogger\bin\Release\Emzi0767.Tools.MicroLogger.dll</HintPath>
+      <HintPath>..\ext_lib\Emzi0767.Tools.MicroLogger.dll</HintPath>
     </Reference>
     <Reference Include="Html2Markdown">
-      <HintPath>..\..\..\..\..\Source\Repos\Html2Markdown\src\Html2Markdown\bin\Release\Html2Markdown.dll</HintPath>
+      <HintPath>..\ext_lib\Html2Markdown.dll</HintPath>
     </Reference>
     <Reference Include="HtmlAgilityPack, Version=1.4.9.5, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
       <HintPath>..\packages\HtmlAgilityPack.1.4.9.5\lib\Net45\HtmlAgilityPack.dll</HintPath>
